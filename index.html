@@ -159,6 +159,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="w-踩坑笔记（一）-本机-win10-虚拟机-ubantu17-10-搭建Redis集群-实现分布式锁" class="article article-type-w  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/26/踩坑笔记（一）-本机-win10-虚拟机-ubantu17-10-搭建Redis集群-实现分布式锁/">踩坑笔记（一） 本机(win10)+虚拟机(ubantu17.10)搭建Redis集群+实现分布式锁</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/26/踩坑笔记（一）-本机-win10-虚拟机-ubantu17-10-搭建Redis集群-实现分布式锁/" class="archive-article-date">
+  	<time datetime="2018-10-26T07:09:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>基于ubantu17.10搭建redis分布式集群，实现分布式锁demo，巩固相关知识点</p>
+<h1 id="第一部分-搭建redis集群"><a href="#第一部分-搭建redis集群" class="headerlink" title="第一部分 搭建redis集群"></a>第一部分 搭建redis集群</h1><h3 id="Redis-部署"><a href="#Redis-部署" class="headerlink" title="Redis 部署"></a>Redis 部署</h3><ol>
+<li><p>redis安装不做赘述，百度一搜一大堆，本人装的是5.0.0版本。wget <a href="http://download.redis.io/releases/redis-5.0.0.tar.gz" target="_blank" rel="noopener">http://download.redis.io/releases/redis-5.0.0.tar.gz</a> 安装–tar xzf解压–make编译。命令相关的报错，根据提示yum -y install即可</p>
+<p>注：如果虚拟机是vbox，网络模式需设置为桥接，否则无法和主机ping通</p>
+</li>
+<li><p>如果需要主机访问虚拟机的redis，需要修改配置：</p>
+<p>1） 将bind 127.0.0.1 注释掉  </p>
+<p>2） 将protected-mode 设置为no （<strong>修改之后 以后启动redis都需要指定conf，否则不起作用</strong>）</p>
+</li>
+<li><p>尝试与本机连接</p>
+<p>redis启动正常</p>
+</li>
+</ol>
+<p>   本机安装redis desktop manager</p>
+<p>   与虚拟机相互ping通；本机虚拟机防火墙均已关闭</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">redis集群，分布式锁，ubantu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/26/踩坑笔记（一）-本机-win10-虚拟机-ubantu17-10-搭建Redis集群-实现分布式锁/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -321,6 +409,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">redis集群，分布式锁，ubantu</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
